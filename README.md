@@ -1,46 +1,23 @@
-# Astro Starter Kit: Basics
+# FaviLink
 
-```sh
-pnpm create astro@latest -- --template basics
+A way to stylize your links created by {Melo} and Astro-ified by [ginger](https://github.com/gingerchew)
+
+```astro
+---
+import Link from 'astro-favi-link';
+---
+<Link href="https://github.com/gingerchew/astro-favi-link">A link to this repo with a fun github favicon at the front</Link>
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Since all Astro components are exported as `default` you can name it whatever you want as long as it starts with a capital letter.
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+```astro
+---
+// technically valid but ill advised
+import A from 'astro-favi-link';
+---
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## Props
 
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+The same attributes as an `a` anchor element.
