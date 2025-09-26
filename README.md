@@ -1,6 +1,6 @@
 # FaviLink
 
-A way to stylize your links created by {Melo} and Astro-ified by [ginger](https://github.com/gingerchew)
+A way to stylize your links created by [kat](https://github.com/xxwhirlpool) and Astro-ified by [ginger](https://github.com/gingerchew)
 
 ```astro
 ---
@@ -20,4 +20,4 @@ import A from 'astro-favi-link';
 
 ## Props
 
-The same attributes as an `a` anchor element.
+The same attributes as an `a` anchor element and an optional `after` attribute that places the favicon after the text.
