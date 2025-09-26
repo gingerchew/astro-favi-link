@@ -3,17 +3,24 @@ import type { HTMLAttributes } from 'astro/types'
 
 interface Props extends HTMLAttributes<'a'> {
     after?: boolean;
+    noStyle?: boolean;
 }
 
-const { href, after = false, ...props } = Astro.props;
+const { href, after = false, noStyle = false, ...props } = Astro.props;
 
 const url = new URL(href as string);
 const src = `https://favicon.garden/${url.hostname}`
 ---
-<a href={href} {...props}>
+<a href={href} {...props} data-no-style={noStyle}>
     {after && <slot />}<img onerror="this.style.display='none';" src={src} loading="lazy" alt="" aria-hidden="true" class="favicon"/>{!after && <slot />}
 </a>
+
 <style>
-    a { display:inline-flex; align-items: center; }
-    img { width: 1em; height: 1em; object-fit: contain; }
+    a:not([data-no-style="true"]) {
+        display:inline-flex;
+        align-items: center;
+        gap: 1ch; 
+        
+        img { width: 1em; height: 1em; object-fit: contain; }
+    }
 </style>

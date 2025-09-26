@@ -20,4 +20,18 @@ import A from 'astro-favi-link';
 
 ## Props
 
-The same attributes as an `a` anchor element and an optional `after` attribute that places the favicon after the text.
+The same attributes as an `a` anchor element and an optional `after` attribute that places the favicon after the text, and `noStyle` for removing the default styles we provide.
+
+## I don't want to add `noStyle` to every link
+
+You can do something like this to have a no style version in your own components.
+
+```astro
+---
+import Link from 'astro-favi-link';
+import { ComponentProps } from 'astro/types';
+
+interface Props extends Omit<'noStyle', ComponentProps<Link>> {}
+---
+<Link noStyle {...Astro.props}><slot /></Link>
+```
